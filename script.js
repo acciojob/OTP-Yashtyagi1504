@@ -1,25 +1,11 @@
-// let inputs = document.querySelectorAll("input");
-// inputs.forEach(input => {
-// 	input.addEventListener("input",shiftFocus);
-// 	// input.addEventListener("keydown",unshiftFocus);
-// })
-// function shiftFocus(){
-// 	for(let i = 0;i<inputs.length;i++){
-// 		if(inputs[i].value !== ""){
-// 			inputs[i+1].focus();
-// 		}
-// 	}
-	
-// }
-// // document.addEventListener("keydown",unshiftFocus);
-// function unshiftFocus(e){	
-// 		for(let i = 0;i<inputs.length;i++){
-// 			if(inputs[i].value === "" && e.key === "Backspace"){
-// 				inputs[i-1].focus();
-				
-// 			}	
-//	 	}
-// }
+// input.addEventListener("focus", ()=>{
+ //        input.classList.add("focused");
+ //    });
+
+ //    input.addEventListener("blur", () => {
+ //        input.classList.remove("focused");
+ //    });
+
 
 let inputs = document.querySelectorAll("input");
 
@@ -30,13 +16,7 @@ inputs.forEach((input,index) => {
 	input.addEventListener("keydown", function(e){
 		unshiftFocus(e,index);
 	})
-	input.addEventListener("focus", () => {
-        input.classList.add("focused"); // Add class on focus
-    });
-
-    input.addEventListener("blur", () => {
-            input.classList.remove("focused"); // Remove class on blur
-        });
+	
 })
 
 function shiftFocus(index){
