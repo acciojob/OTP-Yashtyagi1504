@@ -40,9 +40,9 @@ function shiftFocus(index){
 }
 function unshiftFocus(e,index){
 
-	if(e.key === "Backspace" ){
+	if(e.key === "Backspace" && index>0){
 		e.preventDefault();
-		inputs[index].value=""
+		inputs[index].value="";
 		inputs[index-1].focus();
 	}
 }
