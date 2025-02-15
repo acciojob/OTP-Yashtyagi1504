@@ -16,7 +16,13 @@ inputs.forEach((input,index) => {
 	input.addEventListener("keydown", function(e){
 		unshiftFocus(e,index);
 	})
-	
+	input.addEventListener("focus", ()=>{
+        input.classList.add("focused");
+    });
+
+    input.addEventListener("blur", () => {
+        input.classList.remove("focused");
+    });
 })
 
 function shiftFocus(index){
