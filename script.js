@@ -33,15 +33,16 @@ inputs.forEach((input,index) => {
 })
 
 function shiftFocus(index){
-	if (inputs[index].value !== "" && index < inputs.length - 1) {
+	if (inputs[index].value !== "" && index<inputs.length - 1) {
         inputs[index + 1].focus(); 
-		inputs[index + 1].className="focused"
+
     }
 }
 function unshiftFocus(e,index){
-	// e.preventDefault();
-	if(e.key === "Backspace" && inputs[index].value===""){
+
+	if(e.key === "Backspace" ){
 		e.preventDefault();
+		inputs[index].value=""
 		inputs[index-1].focus();
 	}
 }
