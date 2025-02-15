@@ -27,7 +27,7 @@ inputs.forEach((input,index) => {
 	input.addEventListener("input",function(){
 		shiftFocus(index);
 	})
-	input.addEventListener("keydown", function(){
+	input.addEventListener("keydown", function(e){
 		unshiftFocus(e,index);
 	})
 })
@@ -36,8 +36,9 @@ function shiftFocus(index){
 	inputs[index+1].focus();
 }
 function unshiftFocus(e,index){
-	e.preventDefault();
+	
 	if(e.key === "Backspace" && inputs[index].value===""){
+		e.preventDefault();
 		inputs[index-1].focus();
 	}
 }
