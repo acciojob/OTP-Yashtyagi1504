@@ -33,14 +33,21 @@ inputs.forEach((input,index) => {
 })
 
 function shiftFocus(index){
-	inputs[index+1].focus();
+	// inputs[index+1].focus();
+	if (inputs[index].value !== "" && index < inputs.length - 1) {
+        inputs[index + 1].focus(); // Move to next input only if there is space
+    }
 }
 function unshiftFocus(e,index){
 	
-	if(e.key === "Backspace" && inputs[index].value===""){
-		e.preventDefault();
-		inputs[index-1].focus();
-	}
+	// if(e.key === "Backspace" && inputs[index].value===""){
+	// 	e.preventDefault();
+	// 	inputs[index-1].focus();
+	// }
+	if (e.key === "Backspace" && inputs[index].value === "" && index > 0) {
+        e.preventDefault(); // Prevents backspace default action
+        inputs[index - 1].focus(); // Move focus to previous input
+    }
 }
 
 
