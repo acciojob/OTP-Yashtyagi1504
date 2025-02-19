@@ -17,7 +17,9 @@ inputs.forEach((input,index) => {
 		unshiftFocus(e,index);
 	})
 	input.addEventListener("focus", ()=>{
-        input.classList.add("focused");
+        setTimeout(() => {
+            input.classList.add("focused");
+        }, 10);
     });
 
     input.addEventListener("blur", () => {
