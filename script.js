@@ -31,6 +31,15 @@ function shiftFocus(index){
 	if (inputs[index].value !== "" && index<inputs.length - 1) {
         inputs[index + 1].focus(); 
 
+		
+		const currentInput = inputs[index];
+    const nextInput = inputs[index + 1];
+    
+    // Explicitly manage classes
+    currentInput.classList.remove("focused");
+    // nextInput.focus();
+    nextInput.classList.add("focused");
+
     }
 }
 function unshiftFocus(e,index){
@@ -39,6 +48,15 @@ function unshiftFocus(e,index){
 		e.preventDefault();
 		inputs[index].value="";
 		inputs[index-1].focus();
+
+
+		 const currentInput = inputs[index];
+    const prevInput = inputs[index - 1];
+    
+    // currentInput.value = "";
+    currentInput.classList.remove("focused");
+    // prevInput.focus();
+    prevInput.classList.add("focused");
 	}
 }
 
